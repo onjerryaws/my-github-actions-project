@@ -1,0 +1,17 @@
+{
+  "name": "my-github-actions-project",
+  "version": "1.0.0",
+  "description": "A sample project with GitHub Actions CI/CD pipeline",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "jest",
+    "build": "echo 'Building project...'"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.0"
+  }
+}
