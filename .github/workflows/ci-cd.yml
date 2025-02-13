@@ -49,3 +49,16 @@ jobs:
       # Step 1: Check out the repository
       - name: Checkout code
         uses: actions/checkout@v3
+
+      # Step 2: Deploy to a server (example using SSH)
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /path/to/deploy/directory
+            git pull origin main
+            npm install --production
+            pm2 restart ecosystem.config.js
